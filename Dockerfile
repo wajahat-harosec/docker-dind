@@ -10,4 +10,8 @@ RUN apt-cache policy docker-ce
 RUN apt-get install docker-ce -y
 COPY requirements.txt .
 RUN pip3 install -r requirements.txt
+RUN mkdir -p /drone/src
+RUN chmod -R 777 /drone/src
+
+
 ENTRYPOINT ["/bin/bash"]
