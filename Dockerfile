@@ -8,6 +8,7 @@ RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubunt
 RUN apt-get update
 RUN apt-cache policy docker-ce
 RUN apt-get install docker-ce -y
+RUN pip3 install --upgrade pip==21.1.3
 COPY requirements.txt .
 RUN pip3 install -r requirements.txt
 RUN mkdir -p /drone/src
